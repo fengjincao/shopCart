@@ -1,0 +1,17 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<li style="color:red">{{error}}</li>
+<h1>Sign In</h1>
+<form action="" method="post" name="login">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <p> Please enter your nickname:<br>
+        <input placeholder="input nickname" type="text" name="nick">
+        {% for error in errors %}
+
+        {% endfor %}
+    </p>
+    <p><input type="submit" value="Sign In"></p>
+</form>
+{% endblock %}
