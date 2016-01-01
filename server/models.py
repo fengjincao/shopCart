@@ -1,4 +1,4 @@
-from server import db
+from core import db
 
 
 class GoodsList(db.Model):
@@ -11,13 +11,12 @@ class GoodsList(db.Model):
         return GoodsList.query.all()
 
     def __repr__(self):
-        return '<GoodsList %s>' % (self.name)
+        return '<GoodsList %s>' % self.name
 
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(64), index=True, unique=True)
-
 
     def get_id(self):
         return unicode(self.id)

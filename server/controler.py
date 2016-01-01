@@ -1,5 +1,5 @@
 from models import User
-from server import db
+from core import db
 
 
 def check_login(nickname):
