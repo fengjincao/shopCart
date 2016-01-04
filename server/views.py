@@ -15,11 +15,16 @@ def home():
             user=user)
 
 
-@app.route('/shopping')
+@app.route('/shopping', methods=['POST','GET'])
 def shopping():
     goods = GoodsList.get_all()
     return render_template('shopping.html',
                            goods=goods)
+
+
+@app.route('/add_shopcart',methods=['POST'])
+def add_shopcart():
+    return None
 
 
 @app.route('/', methods=['GET', 'POST'])
