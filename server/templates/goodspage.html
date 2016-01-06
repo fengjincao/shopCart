@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" action="{{url_for('add_shop')}}" name="add_shop">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  <input type="hidden" name="user_id" value="{{userid}}" />
+  <input type="hidden" name="goods_id" value="{{goods.id}}" />
+  <table border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>userid</td>
+        <td> goodsid</td>
+        <td> Name     </td>
+        <td> Price    </td>
+        <td> Quantity </td>
+    </tr>
+    <tr>
+      <td ><p>{{userid}}</p></td>
+      <td><p>{{goods.id}}</p></td>
+      <td><p>{{goods.name}}</p></td>
+      <td><p>{{goods.price}}</p></td>
+      <td><input type="text" name="quantity" id="add_shop_cart" /> </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <input type="submit" />
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

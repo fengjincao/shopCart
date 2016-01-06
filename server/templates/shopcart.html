@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <p>{{username}}'s shopcart</p>
+  <br>
+  <table border="1" cellspacing="0" cellpadding="0" >
+    <tr>
+        <td> goodsid</td>
+        <td> goodsName     </td>
+        <td> goodsPrice    </td>
+        <td> Quantity </td>
+        <td> totalMoney</td>
+    </tr>
+    {% for shopitem in shopitems   %}
+    <tr>
+        <td> {{shopitem.goods_id}}</td>
+        <td> {{shopitem.goods_name}}</td>
+        <td> {{shopitem.goods_price}}</td>
+        <td> {{shopitem.quantity}}</td>
+        <td> {{shopitem.total_money}}</td>
+    </tr>
+    {% endfor  %}
+  </table>
+</head>
+<body>
+
+</body>
+</html>
+{% endblock  %}
